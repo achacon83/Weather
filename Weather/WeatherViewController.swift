@@ -14,13 +14,12 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         Weather(location: "Buenos Aires", temperature: "25 ºC"),
         Weather(location: "La Plata", temperature: "32 ºC")
     ]
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return items.count
     }
