@@ -7,16 +7,24 @@
 
 import UIKit
 
-class SceneDelegate: UIResponder, UIWindowSceneDelegate {
+class SceneDelegate: UIResponder, UIWindowSceneDelegate, WeatherViewModel {
 
     var window: UIWindow?
-
+    
+    
+    var items: [WeatherItemViewModel] = [
+                WeatherItem(location: "San Luis", temperature: "18 ºC"),
+                WeatherItem(location: "Córdoba", temperature: "21 ºC")
+            ]
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-        guard let _ = (scene as? UIWindowScene) else { return }
+        guard let windowScene = (scene as? UIWindowScene) else { return }
+        self.window = UIWindow(windowScene: windowScene)
+        self.window?.rootViewController = WeatherViewController(viewModel: self)
+        self.window?.makeKeyAndVisible()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -50,3 +58,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 }
 
+
+struct WeatherItem: WeatherItemViewModel {
+    var location: String
+    
+    var temperature: String
+    
+    init(location: String, temperature: String) {
+        self.location = location
+        self.temperature = temperature
+    }
+}
