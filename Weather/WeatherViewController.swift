@@ -18,6 +18,7 @@ protocol WeatherViewModel {
 
 class WeatherViewController: UIViewController, UITableViewDelegate {
     @IBOutlet weak var tableView: UITableView!
+    let refreshControl = UIRefreshControl()
     
     private var viewModel: WeatherViewModel!
     
@@ -30,6 +31,15 @@ class WeatherViewController: UIViewController, UITableViewDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         tableView.register(UINib(nibName: "WeatherTableViewCell", bundle: nil), forCellReuseIdentifier: "WeatherTableViewCell")
+        
+        refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
+        tableView.addSubview(refreshControl)
+    }
+    
+    @objc func refresh(_ sender: AnyObject) {
+        tableView.reloadData()
+        refreshControl.endRefreshing()
     }
 }
 
