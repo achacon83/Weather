@@ -19,7 +19,8 @@ class WeatherViewControllerTest: XCTestCase {
         
         _ = sut.view
         XCTAssertEqual(2, sut.tableView.numberOfRows(inSection: 0))
-        //XCTAssertEqual("Buenos Aires", sut.tableView.cellForRow(at: IndexPath(row: 0, section: 0))?.textLabel?.text)
+        let cell = sut.tableView.cellForRow(at: IndexPath(row: 0, section: 0)) as? WeatherTableViewCell
+        XCTAssertEqual("Buenos Aires", cell?.titleLabel.text)
     }
 }
 

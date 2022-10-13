@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ViewModel {
+struct WeatherTableViewCellViewModel {
     var title: String
     var subtitle: String
     

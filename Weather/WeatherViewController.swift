@@ -29,6 +29,7 @@ class WeatherViewController: UIViewController, UITableViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        tableView.register(UINib(nibName: "WeatherTableViewCell", bundle: nil), forCellReuseIdentifier: "WeatherTableViewCell")
     }
 }
 
@@ -39,8 +40,10 @@ extension WeatherViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let item = viewModel.items[indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! WeatherTableViewCell
-        cell.configure(viewModel: ViewModel(title: item.location, subtitle: item.temperature))
+        let cell = tableView.dequeueReusableCell(withIdentifier: "WeatherTableViewCell", for: indexPath) as! WeatherTableViewCell
+        
+        cell.configure(viewModel: WeatherTableViewCellViewModel(title: item.location, subtitle: item.temperature))
+        
         return cell;
     }
 }

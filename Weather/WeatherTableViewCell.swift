@@ -8,10 +8,11 @@
 import UIKit
 
 class WeatherTableViewCell: UITableViewCell {
-    func configure(viewModel: ViewModel) {
-        var content = self.defaultContentConfiguration()
-        content.text = viewModel.title
-        content.secondaryText = viewModel.subtitle
-        self.contentConfiguration = content
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var subtitleLabel: UILabel!
+        
+    func configure(viewModel: WeatherTableViewCellViewModel) {
+        self.titleLabel.text = viewModel.title
+        self.subtitleLabel.text = viewModel.subtitle
     }
 }
