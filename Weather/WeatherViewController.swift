@@ -42,8 +42,22 @@ extension WeatherViewController: UITableViewDataSource {
         let item = viewModel.items[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "WeatherTableViewCell", for: indexPath) as! WeatherTableViewCell
         
-        cell.configure(viewModel: WeatherTableViewCellViewModel(title: item.location, subtitle: item.temperature))
+        cell.configure(viewModel: WeatherItemTableViewCellViewModel(item: item))
         
         return cell;
+    }
+}
+
+struct WeatherItemTableViewCellViewModel: WeatherTableViewCellViewModel {
+    var title: String
+    var subtitle: String
+    
+    init (item: WeatherItemViewModel) {
+        self.init(title: item.location, subtitle: item.temperature)
+    }
+    
+    init(title: String, subtitle: String) {
+        self.title = title
+        self.subtitle = subtitle
     }
 }

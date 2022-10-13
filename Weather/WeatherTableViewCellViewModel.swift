@@ -7,12 +7,7 @@
 
 import Foundation
 
-struct WeatherTableViewCellViewModel {
-    var title: String
-    var subtitle: String
-    
-    init(title: String, subtitle: String) {
-        self.title = title
-        self.subtitle = subtitle
-    }
+protocol WeatherTableViewCellViewModel {
+    var title: String { get }
+    var subtitle: String { get }
 }
