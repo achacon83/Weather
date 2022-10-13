@@ -20,7 +20,9 @@ class WeatherViewControllerTest: XCTestCase {
         _ = sut.view
         XCTAssertEqual(2, sut.tableView.numberOfRows(inSection: 0))
         let cell = sut.tableView.cellForRow(at: IndexPath(row: 0, section: 0)) as? WeatherTableViewCell
+        
         XCTAssertEqual("Buenos Aires", cell?.titleLabel.text)
+        XCTAssertEqual("25 ºC", cell?.subtitleLabel.text)
     }
 }
 
@@ -33,7 +35,6 @@ struct MockWeatherItemViewModel: WeatherItemViewModel {
         self.temperature = temperature
     }
 }
-
 
 struct MockWeatherViewModel: WeatherViewModel {
     var items: [WeatherItemViewModel]
