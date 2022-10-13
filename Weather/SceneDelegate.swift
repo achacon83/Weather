@@ -16,6 +16,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate, WeatherViewModel {
                 WeatherItem(location: "San Luis", temperature: "18 ºC"),
                 WeatherItem(location: "Córdoba", temperature: "21 ºC")
             ]
+    
+    func refreshItems(callback: () -> Void) {
+        callback()
+    }
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.

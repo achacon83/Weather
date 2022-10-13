@@ -14,6 +14,7 @@ protocol WeatherItemViewModel {
 
 protocol WeatherViewModel {
     var items: [WeatherItemViewModel] { get }
+    func refreshItems(callback: () -> Void)
 }
 
 class WeatherViewController: UIViewController, UITableViewDelegate {
@@ -38,8 +39,12 @@ class WeatherViewController: UIViewController, UITableViewDelegate {
     }
     
     @objc func refresh(_ sender: AnyObject) {
-        tableView.reloadData()
-        refreshControl.endRefreshing()
+        viewModel.refreshItems {
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+                self.refreshControl.endRefreshing()
+            }
+        }
     }
 }
 
