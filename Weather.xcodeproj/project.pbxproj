@@ -20,6 +20,8 @@
 		234299C628F79F11005FA084 /* WeatherUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234299C528F79F11005FA084 /* WeatherUITests.swift */; };
 		234299C828F79F11005FA084 /* WeatherUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234299C728F79F11005FA084 /* WeatherUITestsLaunchTests.swift */; };
 		234299DB28F7A182005FA084 /* WeatherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234299DA28F7A182005FA084 /* WeatherTableViewCell.swift */; };
+		23AA323A28FBC79B0006ED8D /* Alamofire.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23AA323928FBC79B0006ED8D /* Alamofire.xcframework */; };
+		23AA323B28FBC79B0006ED8D /* Alamofire.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 23AA323928FBC79B0006ED8D /* Alamofire.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		23C47C4628F830DD004BC0D3 /* WeatherTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23C47C4528F830DD004BC0D3 /* WeatherTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +42,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		23AA323C28FBC79B0006ED8D /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				23AA323B28FBC79B0006ED8D /* Alamofire.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		230C75D128F7B90D0085EC85 /* WeatherTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherTableViewCellViewModel.swift; sourceTree = "<group>"; };
 		230C75D328F7B9CA0085EC85 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
@@ -58,6 +74,7 @@
 		234299C528F79F11005FA084 /* WeatherUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherUITests.swift; sourceTree = "<group>"; };
 		234299C728F79F11005FA084 /* WeatherUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		234299DA28F7A182005FA084 /* WeatherTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherTableViewCell.swift; sourceTree = "<group>"; };
+		23AA323928FBC79B0006ED8D /* Alamofire.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Alamofire.xcframework; path = Carthage/Build/Alamofire.xcframework; sourceTree = "<group>"; };
 		23C47C4528F830DD004BC0D3 /* WeatherTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeatherTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -66,6 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23AA323A28FBC79B0006ED8D /* Alamofire.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,6 +111,7 @@
 				234299BA28F79F11005FA084 /* WeatherTests */,
 				234299C428F79F11005FA084 /* WeatherUITests */,
 				234299A228F79F10005FA084 /* Products */,
+				23AA323828FBC79B0006ED8D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -142,6 +161,14 @@
 			path = WeatherUITests;
 			sourceTree = "<group>";
 		};
+		23AA323828FBC79B0006ED8D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				23AA323928FBC79B0006ED8D /* Alamofire.xcframework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -152,6 +179,7 @@
 				2342999D28F79F10005FA084 /* Sources */,
 				2342999E28F79F10005FA084 /* Frameworks */,
 				2342999F28F79F10005FA084 /* Resources */,
+				23AA323C28FBC79B0006ED8D /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
