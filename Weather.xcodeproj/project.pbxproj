@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		230C75D228F7B90D0085EC85 /* WeatherTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230C75D128F7B90D0085EC85 /* WeatherTableViewCellViewModel.swift */; };
-		230C75D428F7B9CA0085EC85 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230C75D328F7B9CA0085EC85 /* Weather.swift */; };
+		230C75D428F7B9CA0085EC85 /* WeatherApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230C75D328F7B9CA0085EC85 /* WeatherApp.swift */; };
 		230C75D628F7D9250085EC85 /* WeatherViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230C75D528F7D9250085EC85 /* WeatherViewControllerTest.swift */; };
 		230C75D828F7DD730085EC85 /* WeatherViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 230C75D728F7DD730085EC85 /* WeatherViewController.xib */; };
 		234299A528F79F10005FA084 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234299A428F79F10005FA084 /* AppDelegate.swift */; };
@@ -22,6 +22,8 @@
 		234299DB28F7A182005FA084 /* WeatherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234299DA28F7A182005FA084 /* WeatherTableViewCell.swift */; };
 		23AA323A28FBC79B0006ED8D /* Alamofire.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23AA323928FBC79B0006ED8D /* Alamofire.xcframework */; };
 		23AA323B28FBC79B0006ED8D /* Alamofire.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 23AA323928FBC79B0006ED8D /* Alamofire.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		23AA323E28FCA77C0006ED8D /* OpenWeatherMapService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23AA323D28FCA77C0006ED8D /* OpenWeatherMapService.swift */; };
+		23AA324028FCB5720006ED8D /* OpenWeatherMapServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23AA323F28FCB5720006ED8D /* OpenWeatherMapServiceTest.swift */; };
 		23C47C4628F830DD004BC0D3 /* WeatherTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23C47C4528F830DD004BC0D3 /* WeatherTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
@@ -58,7 +60,7 @@
 
 /* Begin PBXFileReference section */
 		230C75D128F7B90D0085EC85 /* WeatherTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherTableViewCellViewModel.swift; sourceTree = "<group>"; };
-		230C75D328F7B9CA0085EC85 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
+		230C75D328F7B9CA0085EC85 /* WeatherApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherApp.swift; sourceTree = "<group>"; };
 		230C75D528F7D9250085EC85 /* WeatherViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewControllerTest.swift; sourceTree = "<group>"; };
 		230C75D728F7DD730085EC85 /* WeatherViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeatherViewController.xib; sourceTree = "<group>"; };
 		234299A128F79F10005FA084 /* Weather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weather.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -75,6 +77,8 @@
 		234299C728F79F11005FA084 /* WeatherUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		234299DA28F7A182005FA084 /* WeatherTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherTableViewCell.swift; sourceTree = "<group>"; };
 		23AA323928FBC79B0006ED8D /* Alamofire.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Alamofire.xcframework; path = Carthage/Build/Alamofire.xcframework; sourceTree = "<group>"; };
+		23AA323D28FCA77C0006ED8D /* OpenWeatherMapService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenWeatherMapService.swift; sourceTree = "<group>"; };
+		23AA323F28FCB5720006ED8D /* OpenWeatherMapServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OpenWeatherMapServiceTest.swift; path = ../../../OpenWeatherMapServiceTest.swift; sourceTree = "<group>"; };
 		23C47C4528F830DD004BC0D3 /* WeatherTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeatherTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -138,7 +142,8 @@
 				234299AD28F79F11005FA084 /* Assets.xcassets */,
 				234299AF28F79F11005FA084 /* LaunchScreen.storyboard */,
 				234299B228F79F11005FA084 /* Info.plist */,
-				230C75D328F7B9CA0085EC85 /* Weather.swift */,
+				230C75D328F7B9CA0085EC85 /* WeatherApp.swift */,
+				23AA323D28FCA77C0006ED8D /* OpenWeatherMapService.swift */,
 			);
 			path = Weather;
 			sourceTree = "<group>";
@@ -148,6 +153,7 @@
 			children = (
 				234299BB28F79F11005FA084 /* WeatherTests.swift */,
 				230C75D528F7D9250085EC85 /* WeatherViewControllerTest.swift */,
+				23AA323F28FCB5720006ED8D /* OpenWeatherMapServiceTest.swift */,
 			);
 			path = WeatherTests;
 			sourceTree = "<group>";
@@ -303,11 +309,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				234299A928F79F10005FA084 /* WeatherViewController.swift in Sources */,
+				23AA323E28FCA77C0006ED8D /* OpenWeatherMapService.swift in Sources */,
 				234299A528F79F10005FA084 /* AppDelegate.swift in Sources */,
 				234299DB28F7A182005FA084 /* WeatherTableViewCell.swift in Sources */,
 				234299A728F79F10005FA084 /* SceneDelegate.swift in Sources */,
 				230C75D228F7B90D0085EC85 /* WeatherTableViewCellViewModel.swift in Sources */,
-				230C75D428F7B9CA0085EC85 /* Weather.swift in Sources */,
+				230C75D428F7B9CA0085EC85 /* WeatherApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -315,6 +322,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23AA324028FCB5720006ED8D /* OpenWeatherMapServiceTest.swift in Sources */,
 				234299BC28F79F11005FA084 /* WeatherTests.swift in Sources */,
 				230C75D628F7D9250085EC85 /* WeatherViewControllerTest.swift in Sources */,
 			);

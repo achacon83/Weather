@@ -36,6 +36,7 @@ class WeatherViewController: UIViewController, UITableViewDelegate {
         refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
         refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
         tableView.addSubview(refreshControl)
+        self.refresh(self)
     }
     
     @objc func refresh(_ sender: AnyObject) {

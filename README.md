@@ -5,3 +5,4 @@ This is an exercise to practice iOS development.
 - Clean architecture 
 - MVVM
 - Use APIs to extract information
+	- https://openweathermap.org/api
