@@ -18,11 +18,35 @@ struct OpenWeatherCurrent: Codable {
     let humidity: Int
 }
 
-struct OpenWeather: Codable {
-    let lat: Double
+struct OWCoordinate: Codable {
     let lon: Double
-    let timezone: String
-    let current: OpenWeatherCurrent?
+    let lat: Double
+}
+
+struct OWWeather: Codable {
+    let id: Int
+    let main: String
+    let description: String
+    let icon: String
+}
+
+struct OWMain: Codable {
+    let temp: Float
+    let feels_like: Float
+    let temp_min: Float
+    let temp_max: Float
+    let pressure: Int
+    let humidity: Int
+//    let sea_level: Int
+//    let grnd_level: Int
+}
+
+struct OpenWeather: Codable {
+    let coord: OWCoordinate
+    let weather: [OWWeather]
+    let base: String
+    let main: OWMain
+    let name: String
 }
 
 enum OpenWheatherResponse {
@@ -36,20 +60,19 @@ class OpenWeatherMapService {
     func requestCurrentWheather(latitude: Double, longitude: Double, completed: @escaping (_ response: OpenWheatherResponse) -> Void) {
         let exclude = "minutely,hourly,daily,alerts"
         let units = "metric"
-        let url = "https://api.openweathermap.org/data/3.0/onecall?lat=\(latitude)&lon=\(longitude)&exclude=\(exclude)&units=\(units)&appid=\(apiKey)"
+        let url = "https://api.openweathermap.org/data/2.5/weather?lat=\(latitude)&lon=\(longitude)&exclude=\(exclude)&units=\(units)&appid=\(apiKey)"
         AF.request(url, method: .get, encoding: JSONEncoding.default)
             .responseData { response in
                 if response.error != nil {
                     completed(.failed)
                     return
-                }
+                }                
                 guard
                     let dataFromService = response.data,
                     let model: OpenWeather = try? JSONDecoder().decode(OpenWeather.self, from: dataFromService) else {
-                    
-                    completed(.failed)
-                    return
-                }
+                        completed(.failed)
+                        return
+                    }
                 
                 completed(.success(model))
                 return

@@ -34,8 +34,8 @@ class WeatherApp: WeatherViewModel {
             switch response {
             case let .success(value):
                 print("done")
-                let tempString = value.current.map { String($0.temp) } ?? ""
-                self.items.append(Weather(location: location, temperature:tempString))
+                //let tempString = value.current.map { String($0.temp) } ?? ""
+                //self.items.append(Weather(location: location, temperature:tempString))
             case .failed:
                 break
             }
