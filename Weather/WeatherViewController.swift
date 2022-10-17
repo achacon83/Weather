@@ -14,7 +14,7 @@ protocol WeatherItemViewModel {
 
 protocol WeatherViewModel {
     var items: [WeatherItemViewModel] { get }
-    func refreshItems(callback: () -> Void)
+    func refreshItems(callback: @escaping () -> Void)
 }
 
 class WeatherViewController: UIViewController, UITableViewDelegate {
