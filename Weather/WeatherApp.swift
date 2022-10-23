@@ -49,7 +49,7 @@ class WeatherApp: WeatherViewModel {
     
     func refreshItems(callback: @escaping () -> Void) {
         items.removeAll(keepingCapacity: true)
-        
+        //Combine
         addItem(latitude: 30.489772, longitude: -99.771335, callback: callback)
         addItem(latitude: -34.5760111, longitude: -58.5462005, callback: callback)
     }

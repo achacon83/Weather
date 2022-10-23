@@ -108,6 +108,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		233916FC290603A300E13FB3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				234299A828F79F10005FA084 /* WeatherViewController.swift */,
+				230C75D728F7DD730085EC85 /* WeatherViewController.xib */,
+				234299DA28F7A182005FA084 /* WeatherTableViewCell.swift */,
+				23C47C4528F830DD004BC0D3 /* WeatherTableViewCell.xib */,
+				230C75D128F7B90D0085EC85 /* WeatherTableViewCellViewModel.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		2342999828F79F10005FA084 = {
 			isa = PBXGroup;
 			children = (
@@ -132,18 +144,14 @@
 		234299A328F79F10005FA084 /* Weather */ = {
 			isa = PBXGroup;
 			children = (
+				233916FC290603A300E13FB3 /* View */,
+				23C870D528FDFD8100514C76 /* Data */,
 				234299A428F79F10005FA084 /* AppDelegate.swift */,
 				234299A628F79F10005FA084 /* SceneDelegate.swift */,
-				234299A828F79F10005FA084 /* WeatherViewController.swift */,
-				230C75D728F7DD730085EC85 /* WeatherViewController.xib */,
-				234299DA28F7A182005FA084 /* WeatherTableViewCell.swift */,
-				23C47C4528F830DD004BC0D3 /* WeatherTableViewCell.xib */,
-				230C75D128F7B90D0085EC85 /* WeatherTableViewCellViewModel.swift */,
 				234299AD28F79F11005FA084 /* Assets.xcassets */,
 				234299AF28F79F11005FA084 /* LaunchScreen.storyboard */,
 				234299B228F79F11005FA084 /* Info.plist */,
 				230C75D328F7B9CA0085EC85 /* WeatherApp.swift */,
-				23AA323D28FCA77C0006ED8D /* OpenWeatherMapService.swift */,
 			);
 			path = Weather;
 			sourceTree = "<group>";
@@ -173,6 +181,14 @@
 				23AA323928FBC79B0006ED8D /* Alamofire.xcframework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		23C870D528FDFD8100514C76 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				23AA323D28FCA77C0006ED8D /* OpenWeatherMapService.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
